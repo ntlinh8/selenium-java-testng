@@ -49,7 +49,7 @@ public class Topic_01_Check_Environment {
 		// Login form displayed
 		Assert.assertTrue(driver.findElement(By.xpath("//form[@data-testid='royal_login_form']")).isDisplayed());
 	}
-
+	//note
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
