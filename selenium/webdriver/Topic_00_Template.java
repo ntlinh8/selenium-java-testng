@@ -38,6 +38,14 @@ public class Topic_00_Template {
 		
 	}
 
+	public void SleepInSecond(long second) {
+		try {
+			Thread.sleep(second * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 	//note
 	@AfterClass
 	public void afterClass() {

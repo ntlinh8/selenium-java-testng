@@ -31,14 +31,6 @@ public class Topic_06_Web_Element_P2 {
 	By slider2 = By.xpath("//input[@id='slider-2']");
 	By javaLanguageCheckbox = By.cssSelector("input#java");
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	@BeforeClass
 	public void beforeClass() {
 		if (osName.contains("Windows")) {
