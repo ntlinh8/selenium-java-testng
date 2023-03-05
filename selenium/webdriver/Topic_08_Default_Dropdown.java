@@ -1,10 +1,12 @@
 package webdriver;
 
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -143,7 +145,42 @@ public class Topic_08_Default_Dropdown {
 		Assert.assertEquals(driver.findElement(By.className("city-state-zip")).getText(), cityName+ ", " + provinceName + ", " + postalCode);
 		Assert.assertEquals(driver.findElement(By.className("country")).getText(), countryName);
 	}
+	
+	@Test
+	public void TC_03_WhereToBuy() {
+		driver.get("https://rode.com/en/support/where-to-buy");
+		SleepInSecond(10);
+		
+		//Verify the dropdown is Not multiple dropdown
+		Assert.assertFalse(new Select(driver.findElement(By.id("country"))).isMultiple());
 
+		new Select(driver.findElement(By.id("country"))).selectByVisibleText("Vietnam");
+		Assert.assertEquals(new Select(driver.findElement(By.id("country"))).getFirstSelectedOption().getText(), "Vietnam");
+		driver.findElement(By.xpath("//button[text()='Search']")).click();
+		Assert.assertEquals(driver.findElements(By.cssSelector("div.align-self-stretch")).size(), 49);
+		
+		List<WebElement> searchResults = driver.findElements(By.cssSelector("div.align-self-stretch h4"));
+		for (WebElement webElement : searchResults) {
+			System.out.println(webElement.getText());
+		}
+	}
+	
+	@Test
+	public void TC_04_Applitool() {
+		driver.get("https://applitools.com/automating-tests-chrome-devtools-recorder-webinar/");
+		
+		//Choose the role and verify select success
+		new Select(driver.findElement(By.id("Person_Role__c"))).selectByVisibleText("SDET / Test Automation Engineer");
+		Assert.assertEquals(new Select(driver.findElement(By.id("Person_Role__c"))).getFirstSelectedOption().getText(), "SDET / Test Automation Engineer");
+		
+		//Choose the Framework and verify select success
+		new Select(driver.findElement(By.id("Test_Framework__c"))).selectByVisibleText("TestCafe");
+		Assert.assertEquals(new Select(driver.findElement(By.id("Test_Framework__c"))).getFirstSelectedOption().getText(), "TestCafe");
+		
+		//Choose the Country and verify select success
+		new Select(driver.findElement(By.id("Self_Report_Country__c"))).selectByVisibleText("Australia");
+		Assert.assertEquals(new Select(driver.findElement(By.id("Self_Report_Country__c"))).getFirstSelectedOption().getText(), "Australia");
+	}
 	public void SleepInSecond(long second) {
 		try {
 			Thread.sleep(second * 1000);
