@@ -37,6 +37,16 @@ public class Topic_00_Template {
 	public void TC_02() {
 		
 	}
+	
+	@Test
+	public void TC_03() {
+		
+	}
+	
+	@Test
+	public void TC_04() {
+		
+	}
 
 	public void SleepInSecond(long second) {
 		try {
