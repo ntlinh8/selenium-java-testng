@@ -33,7 +33,7 @@ public class Topic_17_Popup_Part_II {
 		driver.manage().window().maximize();
 	}
 
-//	@Test
+	@Test
 	public void TC_01_Fixed_Popup_Not_In_DOM_Tiki() {
 		driver.get("https://tiki.vn/");
 		SleepInSecond(2);

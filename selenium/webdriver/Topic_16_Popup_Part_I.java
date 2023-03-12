@@ -33,7 +33,7 @@ public class Topic_16_Popup_Part_I {
 		driver.manage().window().maximize();
 	}
 
-//	@Test
+	@Test
 	public void TC_01_Fixed_In_DOM_NgoaiNgu() {
 		driver.get("https://ngoaingu24h.vn/");
 		SleepInSecond(5);
@@ -57,7 +57,7 @@ public class Topic_16_Popup_Part_I {
 		Assert.assertTrue(driver.findElement(By.xpath("//div[text()='Tài khoản không tồn tại!']")).isDisplayed());
 	}
 
-//	@Test
+	@Test
 	public void TC_02_Fixed_In_DOM_Kyna() {
 		driver.get("https://skills.kynaenglish.vn/");
 		By loginPopup = By.cssSelector("div#k-popup-account-login");
