@@ -1,5 +1,8 @@
 package webdriver;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,7 +12,9 @@ import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -93,7 +98,7 @@ public class Topic_15_Action_Part_III {
 	}
 	
 	@Test
-	public void TC_03_Drag_And_Drop_HTML5() throws IOException{
+	public void TC_04_Drag_And_Drop_HTML5() throws IOException{
 		String jsHelper = getContentFile(dragDropHelperPath);
 		
 		driver.get("https://automationfc.github.io/drag-drop-html5/");
@@ -115,6 +120,21 @@ public class Topic_15_Action_Part_III {
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='column-b']/header[text()='B']")).isDisplayed());
 	}
 	
+	@Test
+	public void TC_05_Drag_And_Drop_HTML5() throws AWTException{
+		driver.get("https://automationfc.github.io/drag-drop-html5/");
+		
+		dragAndDropHTML5ByXpath("//div[@id='column-a']", "//div[@id='column-b']");
+		SleepInSecond(3);
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='column-a']/header[text()='B']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='column-b']/header[text()='A']")).isDisplayed());
+		
+		dragAndDropHTML5ByXpath("//div[@id='column-b']", "//div[@id='column-a']");
+		SleepInSecond(3);
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='column-a']/header[text()='A']")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='column-b']/header[text()='B']")).isDisplayed());
+	}
+	
 	public String getContentFile(String filePath) throws IOException {
 		Charset cs = Charset.forName("UTF-8");
 		FileInputStream stream = new FileInputStream(filePath);
@@ -130,6 +150,49 @@ public class Topic_15_Action_Part_III {
 		} finally {
 			stream.close();
 		}
+	}
+	
+	public void dragAndDropHTML5ByXpath(String sourceLocator, String targetLocator) throws AWTException {
+
+		WebElement source = driver.findElement(By.xpath(sourceLocator));
+		WebElement target = driver.findElement(By.xpath(targetLocator));
+
+		// Setup robot
+		Robot robot = new Robot();
+		robot.setAutoDelay(500);
+
+		// Get size of elements
+		Dimension sourceSize = source.getSize();
+		Dimension targetSize = target.getSize();
+
+		// Get center distance
+		int xCentreSource = sourceSize.width / 2;
+		int yCentreSource = sourceSize.height / 2;
+		int xCentreTarget = targetSize.width / 2;
+		int yCentreTarget = targetSize.height / 2;
+
+		Point sourceLocation = source.getLocation();
+		Point targetLocation = target.getLocation();
+
+		// Make Mouse coordinate center of element
+		sourceLocation.x += 20 + xCentreSource;
+		sourceLocation.y += 110 + yCentreSource;
+		targetLocation.x += 20 + xCentreTarget;
+		targetLocation.y += 110 + yCentreTarget;
+
+		// Move mouse to drag from location
+		robot.mouseMove(sourceLocation.x, sourceLocation.y);
+
+		// Click and drag
+		robot.mousePress(InputEvent.BUTTON1_MASK);
+		robot.mousePress(InputEvent.BUTTON1_MASK);
+		robot.mouseMove(((sourceLocation.x - targetLocation.x) / 2) + targetLocation.x, ((sourceLocation.y - targetLocation.y) / 2) + targetLocation.y);
+
+		// Move to final position
+		robot.mouseMove(targetLocation.x, targetLocation.y);
+
+		// Drop
+		robot.mouseRelease(InputEvent.BUTTON1_MASK);
 	}
 	
 	public void SleepInSecond(long second) {
