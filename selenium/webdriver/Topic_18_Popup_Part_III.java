@@ -66,7 +66,7 @@ public class Topic_18_Popup_Part_III {
 	public void TC_03_Random_Not_In_DOM() {
 		driver.get("https://dehieu.vn/");
 		SleepInSecond(5);
-		if(driver.findElements(By.cssSelector("section#popup")).size() != 0) {
+		if(driver.findElements(By.cssSelector("section#popup")).size() > 0 && driver.findElements(By.cssSelector("section#popup")).get(0).isDisplayed()) {
 			driver.findElement(By.cssSelector("button#close-popup")).click();
 		}
 	}
