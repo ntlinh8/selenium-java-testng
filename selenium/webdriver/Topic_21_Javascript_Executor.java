@@ -3,7 +3,6 @@ package webdriver;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -124,7 +123,7 @@ public class Topic_21_Javascript_Executor {
 		sendkeyToElementByJS("//input[@name='name']", "Elon Musk");
 		removeAttributeInDOM("//input[@name='dob']", "type");
 		sendkeyToElementByJS("//input[@name='dob']", "23/01/1994");
-		sendkeyToElementByJS("//textarea[@name='addr']", "Nguyen Chi Thanh, Ba Dinh, Ha Noi");
+		driver.findElement(By.xpath("//textarea[@name='addr']")).sendKeys("Nguyen Chi Thanh, Ba Dinh, Ha Noi");
 		sendkeyToElementByJS("//input[@name='city']", "Ha Noi");
 		sendkeyToElementByJS("//input[@name='state']", "Ha Noi");
 		sendkeyToElementByJS("//input[@name='pinno']", "100000");
