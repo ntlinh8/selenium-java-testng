@@ -31,6 +31,8 @@ public class Topic_26_ImplicitWait {
 	/*
 	 * Knowledge: Sau khi apply implicit wait thi no se anh huong toi tat ca qua trinh findElement ngay sau do 
 	 * -> chi can apply set implicit wait 1 lan duy nhat cho toan bo script
+	 * 
+	 * Implicit wait: wait ngầm định: ko cho 1 element nào cụ thể hoặc 1 trạng thái nào cụ thể nào
 	 */
 	@Test
 	public void TC_01_No_Enough_Time() {

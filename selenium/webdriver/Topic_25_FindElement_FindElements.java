@@ -32,7 +32,7 @@ public class Topic_25_FindElement_FindElements {
 
 	/*
 	 * Knowledge: inplicit wait apply cho tat ca cac ham find Element bao gom findElement and findElements
-	 * thuc hien tim element trong 15s, 0.5s tim 1 lan. 
+	 * thuc hien tim element trong 15s, 0.5s tim 1 lan. (interval time = 0.5s)
 	 * Neu trong 15s tim thay element -> ko can wait nua -> run tiep step tiep theo
 	 * neu het 15s ko thay element -> 
 	 * findElement -> FAIL: throw exception: noSuchElement. 
