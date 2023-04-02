@@ -132,7 +132,7 @@ public class Topic_28_Explicit_Wait_I {
 	@Test
 	public void TC_07_No_Element() {
 		// TH4: Ko thay element trong DOM
-		// Result: Fail and time = implicitWait
+		// Result: PASS and time = implicitWait
 		// in this case, time = 30
 		driver.get("https://automationfc.github.io/dynamic-loading/");
 
