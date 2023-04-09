@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Tiki demo">
+	<suite-files>
+		<suite-file path="Demo06_Run_Many_Suites_Tiki_Admin.xml" />
+		<suite-file path="Demo06_Run_Many_Suites_Tiki_User.xml" />
+	</suite-files>
+</suite>

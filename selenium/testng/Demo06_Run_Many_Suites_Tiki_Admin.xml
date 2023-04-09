@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+	<test name="Run on Chrome">
+		<!-- Local-->
+		<classes>
+			<class name="tiki.admin.Shopper_01_Manage_Product" />
+		</classes>
+	</test>
+
+</suite>
