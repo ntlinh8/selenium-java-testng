@@ -29,7 +29,7 @@ public class Topic_10_Button_Radio_Checkbox {
 		driver.manage().window().maximize();
 	}
 
-//	@Test
+	@Test
 	public void TC_01_Button() {
 		/*
 		 * https://www.selenium.dev/documentation/webdriver/support_features/colors/
@@ -53,7 +53,7 @@ public class Topic_10_Button_Radio_Checkbox {
 		
 	}
 
-//	@Test
+	@Test
 	public void TC_02_Default_Checkbox_Radio() {
 		driver.get("https://demos.telerik.com/kendo-ui/checkbox/index");
 		SleepInSecond(3);
@@ -75,7 +75,7 @@ public class Topic_10_Button_Radio_Checkbox {
 		
 	}
 	
-//	@Test
+	@Test
 	public void TC_03_Custom_Checkbox_Radio_Angular_Material() {
 		driver.get("https://material.angular.io/components/radio/examples");
 		

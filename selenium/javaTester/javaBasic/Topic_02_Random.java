@@ -1,11 +1,11 @@
-package javaTester;
+package javaTester.javaBasic;
 
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Topic02_Random {
+public class Topic_02_Random {
 
 	public static void main(String[] args) {
 		Random rand = new Random();
