@@ -83,7 +83,7 @@ public class Topic_14_String {
 		System.out.println(spaceString.trim());
 		System.out.println("-----------------------------");
 		
-		Ex3();
+		Ex2();
 	}
 	public static void Ex1() {
 		Scanner scanner = new Scanner(System.in);
@@ -117,6 +117,16 @@ public class Topic_14_String {
 		System.out.println("Vi tri tu Tutorials " + message.indexOf("Tutorials"));
 		message = message.replace("Online", "Offline");
 		System.out.println(message);
+		
+		int numberNumber = 0;
+		for(int i = 0; i < message.length(); i++) {
+			char charactor = message.charAt(i);
+			if(charactor >= '0' && charactor <= '9'){
+				numberNumber++;
+			}
+		}
+		System.out.println("So ki tu la number is " + numberNumber);
+		
 		
 	}
 	
