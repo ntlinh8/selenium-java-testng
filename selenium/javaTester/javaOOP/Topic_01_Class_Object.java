@@ -1,10 +1,10 @@
-package javaTester.javaBasic;
+package javaTester.javaOOP;
 
-public class Topic_13_Student {
+public class Topic_01_Class_Object {
 	int id, age, score;
 	String name;
 	
-	public Topic_13_Student(int id, int age, String name, int score) {
+	public Topic_01_Class_Object(int id, int age, String name, int score) {
 		this.id = id;
 		this.age = age;
 		this.name = name;
