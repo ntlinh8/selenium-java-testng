@@ -17,8 +17,9 @@ public class Topic_15_Format_String {
 		System.out.println(thirdStr.substring(5));
 	}
 	
-	public static void clickToLink(String linkLabel) {
-		System.out.println("Click to link " + String.format(DYNAMIC_LOCATOR, linkLabel));
+	// có thể thay thế n giá trị trong string
+	public static void clickToLink(String... value) {
+		System.out.println("Click to link " + String.format(DYNAMIC_LOCATOR, value));
 	}
 
 }
