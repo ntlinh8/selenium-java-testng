@@ -18,11 +18,6 @@ public class Topic_08_Condition_Statement {
 		if (element.isDisplayed()) {
 			element.click();
 		}
-		
-		
-		
-		
-		
 	}
 
 }
