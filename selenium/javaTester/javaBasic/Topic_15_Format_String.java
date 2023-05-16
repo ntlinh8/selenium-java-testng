@@ -18,8 +18,8 @@ public class Topic_15_Format_String {
 	}
 	
 	// có thể thay thế n giá trị trong string
-	public static void clickToLink(String... value) {
-		System.out.println("Click to link " + String.format(DYNAMIC_LOCATOR, value));
+	public static void clickToLink(String... params) {
+		System.out.println("Click to link " + String.format(DYNAMIC_LOCATOR, (Object[]) params));
 	}
 
 }
