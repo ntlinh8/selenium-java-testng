@@ -3,7 +3,7 @@ package javaTester.javaBasic;
 import java.util.Calendar;
 import java.util.Random;
 
-public class Topic_16_Generate_Data {
+public class Topic_17_Generate_Data {
 
 	public static void main(String[] args) {
 		System.out.println(getRandomEmail());
