@@ -82,7 +82,8 @@ public class Topic_14_String {
 		String spaceString = "     Hello world, Nguyen Van A     ";
 		System.out.println(spaceString.trim());
 		System.out.println("-----------------------------");
-		
+		String h = "hello 1234";
+		System.out.println("The correct number is " + h.substring(h.length()-4, h.length()));
 		Ex2();
 	}
 	public static void Ex1() {
