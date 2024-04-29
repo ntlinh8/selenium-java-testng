@@ -1,5 +1,4 @@
-# Selenium Java TestNG Framework
-
+# Learn how to interact with each type of elements 
 Welcome to the Selenium Java TestNG Framework repository! This framework is designed to facilitate automated testing of web applications using Selenium WebDriver and TestNG in Java.
 
 ## Table of Contents
